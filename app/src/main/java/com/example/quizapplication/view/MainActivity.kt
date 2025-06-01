@@ -17,7 +17,6 @@ import com.example.quizapplication.viewmodel.QuizViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.yield
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                     Log.i("TAGY", "This is the first question: ${questionsList[0]}")
 
                     binding.apply {
-                        txtQuestion.text = questionsList!![0].question
+                        txtQuestion.text = "Q${1}: "+questionsList!![0].question
                         radio1.text = questionsList!![0].option1
                         radio2.text = questionsList!![0].option2
                         radio3.text = questionsList!![0].option3
@@ -81,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                             }
 
                             //displaying the next questions
-                            txtQuestion.text = "Question ${i + 1}: " + it[i].question
+                            txtQuestion.text = "Q${i + 1}: " + it[i].question
                             radio1.text = it[i].option1
                             radio2.text = it[i].option2
                             radio3.text = it[i].option3
